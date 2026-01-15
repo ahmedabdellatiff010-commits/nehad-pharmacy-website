@@ -18,6 +18,20 @@ app.use(cors());
 app.use(bodyParser.json({ limit: '50mb' }));
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 
+
+
+// ===== RAILWAY ROOT CHECK (IMPORTANT) =====
+app.get('/', (req, res) => {
+  res.status(200).json({
+    status: 'ok',
+    message: 'Backend is running on Railway 🚀'
+  });
+});
+
+
+
+
+
 /* ===================== PATHS ===================== */
 const ROOT_DIR = path.join(__dirname, '..');
 const DATA_DIR = path.join(__dirname, 'data');
