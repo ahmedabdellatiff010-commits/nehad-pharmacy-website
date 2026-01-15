@@ -479,16 +479,7 @@ app.delete('/api/reviews/:id', (req, res) => {
 
 
 // Start server
-app.listen(PORT, () => {
-  console.log(`
-╔═════════════════════════════════════════════════════╗
-║   Pharmacy Website + Admin Control Panel - Running  ║
-║   Website: http://192.168.1.7:${PORT}                   ║
-║   API Server: http://192.168.1.7:${PORT}/api           ║
-║   Admin Dashboard: http://192.168.1.7:${PORT}/admin    ║
-║   Uploads: http://192.168.1.7:${PORT}/uploads          ║
-╚═════════════════════════════════════════════════════╝
-  `);
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`server running on port ${PORT}`);
 });
-
 module.exports = app;
