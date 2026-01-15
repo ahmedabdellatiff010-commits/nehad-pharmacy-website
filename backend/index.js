@@ -35,7 +35,7 @@ app.use('/admin', express.static(path.join(__dirname, '../admin')));
 // Serve frontend website from root (/)
 // Frontend files are in the parent directory (project root)
 const FRONTEND_DIR = path.join(__dirname, '..');
-app.use(express.static(FRONTEND_DIR));
+// app.use(express.static(FRONTEND_DIR));
 
 // Multer setup for handling image uploads
 const storage = multer.diskStorage({
@@ -476,14 +476,7 @@ app.delete('/api/reviews/:id', (req, res) => {
 });
 
 // SPA fallback: serve index.html for unknown frontend routes
-app.get('*', (req, res) => {
-  const indexPath = path.join(__dirname, '..', 'index.html');
-  if (fs.existsSync(indexPath)) {
-    res.sendFile(indexPath);
-  } else {
-    res.status(404).json({ error: 'Not found' });
-  }
-});
+
 
 // Start server
 app.listen(PORT, () => {
