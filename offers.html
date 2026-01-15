@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>العروض — صيدلية NEHAD ABDELRAMAN</title>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">اذهب إلى المحتوى</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="header-left">
+        <a href="index.html" aria-label="Nehad Pharmacy Home">
+          <img src="image/Nehad pharmacy.png" alt="Nehad Pharmacy Logo" class="navbar-logo">
+        </a>
+      </div>
+      <nav class="nav" id="nav-menu">
+        <a href="index.html">الرئيسية</a>
+        <a href="shop.html">تسوق</a>
+        <a href="wishlist.html">المفضلة</a>
+        <a href="offers.html" class="active" aria-current="page">العروض</a>
+        <a href="contact.html">اتصل بنا</a>
+      </nav>
+      <div class="header-right">
+        <button class="hamburger" id="hamburger" aria-label="فتح القائمة" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+        <a class="cart" href="cart.html" aria-label="عرض السلة">
+          <img src="image/shopping-cart.svg" width="24" alt="cart icon">
+          <span class="cart-count" aria-live="polite">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="shop-page container">
+      <div class="shop-header">
+        <h1>العروض والتخفيضات</h1>
+        <p class="sub">استعرض أفضل العروض الحالية والتخفيضات المحدودة.</p>
+      </div>
+
+      <div id="offers-grid" class="grid"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <small>© 2026 صيدلية NEHAD ABDELRAMAN. جميع الحقوق محفوظة.</small>
+      <nav class="footer-nav">
+        <a href="#">الموقع الرسمي</a>
+        <a href="#">تابعنا</a>
+        <a href="contact.html">اتصل بنا</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/products.js" defer></script>
+  <script src="js/utils.js" defer></script>
+  <script src="js/product-manager.js" defer></script>
+  <script src="js/cart-manager.js" defer></script>
+  <script src="js/cart.js" defer></script>
+  <script src="js/minicart.js" defer></script>
+  <script src="js/offers.js" defer></script>
+  <script src="js/hamburger.js" defer></script>
+</body>
+</html>

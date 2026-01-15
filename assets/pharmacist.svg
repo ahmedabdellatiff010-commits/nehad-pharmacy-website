@@ -1,0 +1,97 @@
+<svg viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Head -->
+  <circle cx="150" cy="80" r="35" fill="#f4c4a0"/>
+  
+  <!-- Hair -->
+  <path d="M 115 80 Q 115 45 150 45 Q 185 45 185 80" fill="#8b4513" stroke="none"/>
+  <circle cx="120" cy="75" r="8" fill="#8b4513"/>
+  <circle cx="180" cy="75" r="8" fill="#8b4513"/>
+  
+  <!-- Hair front -->
+  <path d="M 125 65 Q 150 50 175 65" fill="#8b4513"/>
+  
+  <!-- Eyes -->
+  <circle cx="140" cy="75" r="4" fill="#333"/>
+  <circle cx="160" cy="75" r="4" fill="#333"/>
+  <circle cx="141" cy="74" r="1.5" fill="#fff"/>
+  <circle cx="161" cy="74" r="1.5" fill="#fff"/>
+  
+  <!-- Eyebrows -->
+  <path d="M 135 70 Q 140 68 145 70" stroke="#333" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <path d="M 155 70 Q 160 68 165 70" stroke="#333" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  
+  <!-- Nose -->
+  <path d="M 150 75 L 150 85" stroke="#d4a574" stroke-width="1" fill="none" stroke-linecap="round"/>
+  
+  <!-- Smile -->
+  <path d="M 142 90 Q 150 95 158 90" stroke="#333" stroke-width="2" fill="none" stroke-linecap="round"/>
+  
+  <!-- Neck -->
+  <rect x="140" y="110" width="20" height="15" fill="#f4c4a0"/>
+  
+  <!-- White Coat/Lab Coat -->
+  <path d="M 115 125 L 100 130 Q 95 140 100 280 Q 150 300 200 280 Q 205 140 200 130 L 185 125 Z" fill="#ffffff" stroke="#e0e0e0" stroke-width="1.5"/>
+  
+  <!-- Coat buttons -->
+  <circle cx="150" cy="150" r="3" fill="#d8874a"/>
+  <circle cx="150" cy="180" r="3" fill="#d8874a"/>
+  <circle cx="150" cy="210" r="3" fill="#d8874a"/>
+  <circle cx="150" cy="240" r="3" fill="#d8874a"/>
+  
+  <!-- Coat collar -->
+  <path d="M 140 125 L 150 135 L 160 125" fill="#e0e0e0"/>
+  
+  <!-- Left Arm -->
+  <g>
+    <rect x="100" y="130" width="15" height="70" rx="7" fill="#f4c4a0"/>
+    <!-- Sleeve -->
+    <rect x="97" y="125" width="21" height="15" fill="#ffffff" stroke="#e0e0e0" stroke-width="1"/>
+    <!-- Hand -->
+    <circle cx="107" cy="210" r="10" fill="#f4c4a0"/>
+    <!-- Fingers -->
+    <path d="M 102 210 L 100 215" stroke="#f4c4a0" stroke-width="3" stroke-linecap="round"/>
+    <path d="M 107 218 L 107 225" stroke="#f4c4a0" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Right Arm holding clipboard -->
+  <g>
+    <rect x="185" y="130" width="15" height="70" rx="7" fill="#f4c4a0"/>
+    <!-- Sleeve -->
+    <rect x="182" y="125" width="21" height="15" fill="#ffffff" stroke="#e0e0e0" stroke-width="1"/>
+    <!-- Hand -->
+    <circle cx="193" cy="210" r="10" fill="#f4c4a0"/>
+  </g>
+  
+  <!-- Clipboard -->
+  <g transform="translate(200, 180)">
+    <rect x="0" y="0" width="50" height="60" fill="#f5f5f5" stroke="#999" stroke-width="1.5" rx="3"/>
+    <rect x="2" y="2" width="46" height="8" fill="#d8874a" rx="2"/>
+    <!-- Lines on clipboard -->
+    <line x1="5" y1="15" x2="45" y2="15" stroke="#ccc" stroke-width="1"/>
+    <line x1="5" y1="22" x2="45" y2="22" stroke="#ccc" stroke-width="1"/>
+    <line x1="5" y1="29" x2="40" y2="29" stroke="#ccc" stroke-width="1"/>
+    <line x1="5" y1="36" x2="45" y2="36" stroke="#ccc" stroke-width="1"/>
+    <line x1="5" y1="43" x2="35" y2="43" stroke="#ccc" stroke-width="1"/>
+    <line x1="5" y1="50" x2="45" y2="50" stroke="#ccc" stroke-width="1"/>
+  </g>
+  
+  <!-- Badge/Nametag -->
+  <g transform="translate(115, 150)">
+    <rect x="0" y="0" width="35" height="25" fill="#d8874a" stroke="#b8703a" stroke-width="1" rx="3"/>
+    <circle cx="17.5" cy="3" r="2" fill="#b8703a"/>
+    <text x="17.5" y="18" font-size="8" fill="#fff" text-anchor="middle" font-weight="bold">صيدلانية</text>
+  </g>
+  
+  <!-- Legs -->
+  <rect x="135" y="290" width="12" height="50" fill="#333" rx="6"/>
+  <rect x="153" y="290" width="12" height="50" fill="#333" rx="6"/>
+  
+  <!-- Shoes -->
+  <ellipse cx="141" cy="345" rx="10" ry="8" fill="#222"/>
+  <ellipse cx="159" cy="345" rx="10" ry="8" fill="#222"/>
+  
+  <!-- Decorative background elements -->
+  <circle cx="30" cy="100" r="15" fill="#d8874a" opacity="0.1"/>
+  <circle cx="270" cy="200" r="20" fill="#d8874a" opacity="0.1"/>
+  <circle cx="50" cy="300" r="12" fill="#d8874a" opacity="0.08"/>
+</svg>
