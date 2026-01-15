@@ -83,38 +83,19 @@ const writeJSON = (file, data) => {
 
 /* ===================== API ROUTES ===================== */
 
-/* Health */
-app.get('/api/health', (_, res) => {
-  res.json({ status: 'ok' });
+app.get('/', (req, res) => {
+  res.status(200).send(`
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <title>Backend OK</title>
+      </head>
+      <body>
+        <h1>Backend is running on Railway 🚀</h1>
+      </body>
+    </html>
+  `);
 });
-
-/* Upload */
-app.post('/api/upload', upload.single('image'), (req, res) => {
-  if (!req.file) return res.status(400).json({ error: 'No file' });
-  res.json({
-    filename: req.file.filename,
-    url: `/uploads/${req.file.filename}`
-  });
-});
-
-/* Products */
-app.get('/api/products', (_, res) => res.json(readJSON('products.json')));
-app.post('/api/products', (req, res) => {
-  const items = readJSON('products.json');
-  const item = { id: `p-${Date.now()}`, ...req.body };
-  items.push(item);
-  writeJSON('products.json', items);
-  res.json(item);
-});
-
-/* Categories */
-app.get('/api/categories', (_, res) => res.json(readJSON('categories.json')));
-
-/* Orders */
-app.get('/api/orders', (_, res) => res.json(readJSON('orders.json')));
-
-/* Reviews */
-app.get('/api/reviews', (_, res) => res.json(readJSON('reviews.json')));
 
 /* ===================== SPA FALLBACK ===================== */
 app.get('*', (req, res) => {
