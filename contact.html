@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>اتصل بنا — صيدلية NEHAD ABDELRAMAN</title>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&family=Segoe+UI:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">اذهب إلى المحتوى</a>
+   <header class="site-header">
+    <div class="container header-inner">
+
+      <!-- LEFT : LOGO (IMAGE ONLY) -->
+      <div class="header-left">
+        <a href="index.html" aria-label="Nehad Pharmacy Home">
+          <img
+            src="image/Nehad pharmacy.png"
+            alt="Nehad Pharmacy Logo"
+            class="navbar-logo"
+          >
+        </a>
+      </div>
+
+      <!-- CENTER : NAV (DESKTOP ONLY) -->
+      <nav class="nav" id="nav-menu">
+        <a href="index.html" class="active" aria-current="page">الرئيسية</a>
+        <a href="shop.html">تسوق</a>
+        <a href="wishlist.html">المفضلة</a>
+        <a href="offers.html">العروض</a>
+        <a href="contact.html">اتصل بنا</a>
+      </nav>
+
+      <!-- RIGHT : HAMBURGER + CART -->
+      <div class="header-right">
+
+        <button class="hamburger" id="hamburger" aria-label="فتح القائمة" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+
+        <a class="cart" href="cart.html" aria-label="عرض السلة">
+          <img src="image/shopping-cart.svg" width="24" alt="cart icon">
+          <span class="cart-count" aria-live="polite">0</span>
+        </a>
+
+      </div>
+
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="contact-page container">
+      <div class="contact-grid">
+        <div class="contact-form">
+          <h2>اتصل بنا</h2>
+          <p class="sub">يسعدنا سماع منك. يرجى ملء النموذج أدناه — سنرد عليك في أسرع وقت ممكن.</p>
+
+          <form action="#" method="post" class="form" novalidate>
+            <label class="visually-hidden" for="name">الاسم</label>
+            <input id="name" name="name" class="form-input" placeholder="اسمك" required>
+
+            <label class="visually-hidden" for="email">البريد الإلكتروني</label>
+            <input id="email" type="email" name="email" class="form-input" placeholder="بريدك الإلكتروني" required>
+
+            <label class="visually-hidden" for="message">الرسالة</label>
+            <textarea id="message" name="message" rows="6" class="form-input" placeholder="رسالتك" required></textarea>
+
+            <div class="form-actions">
+              <button class="btn btn--primary" type="submit">إرسال الرسالة</button>
+            </div>
+          </form>
+        </div>
+
+        <aside class="contact-info">
+          <h3>معلومات التواصل</h3>
+          <p class="muted">للاستفسارات والطلبات، يرجى استخدام النموذج أعلاه أو معلومات التواصل أدناه.</p>
+
+          <div class="info-card">
+            <p><strong>البريد الإلكتروني</strong><br><a href="mailto:info@nehadpharmacy.com">info@nehadpharmacy.com</a></p>
+            <p style="margin-top:12px"><strong>الهاتف</strong><br><a href="tel:+966501234567">01099460494</a></p>
+            <p style="margin-top:12px"><strong>الموقع</strong><br>مدينه ههيا -الشرقيه </p>
+          </div>
+
+          <div class="hours" style="margin-top:16px">
+            <small class="muted">أوقات العمل</small>
+            <p class="muted" style="margin:6px 0 0">علي مدار الاسبوع من 8 صباحا الي 12 مساء</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <small>© 2026 صيدلية NEHAD ABDELRAMAN. جميع الحقوق محفوظة.</small>
+      <nav class="footer-nav">
+        <a href="#">الموقع الرسمي</a>
+        <a href="#">تابعنا</a>
+        <a href="contact.html">اتصل بنا</a>
+      </nav>
+    </div>
+  </footer>
+  <script src="js/utils.js" defer></script>
+  <script src="js/products.js" defer></script>
+  <script src="js/cart.js" defer></script>
+  <script src="js/hamburger.js" defer></script>
+</body>
+</html>

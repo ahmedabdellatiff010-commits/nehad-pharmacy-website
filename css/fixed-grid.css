@@ -1,0 +1,48 @@
+
+/* ===== CLEAN PRODUCT GRID FIX ===== */
+
+/* Desktop: 5 columns grid */
+@media (min-width: 1024px) {
+  .grid {
+    display: grid !important;
+    grid-template-columns: repeat(5, 1fr) !important;
+    gap: 20px;
+    overflow: visible !important;
+  }
+}
+
+/* Tablet */
+@media (min-width: 600px) and (max-width: 1023px) {
+  .grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 16px;
+  }
+}
+
+/* Mobile: horizontal scroll WITHOUT slider */
+@media (max-width: 599px) {
+  .grid {
+    display: flex !important;
+    gap: 12px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .product-card {
+    flex: 0 0 80%;
+    scroll-snap-align: start;
+  }
+}
+
+/* Prevent global horizontal overflow */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}

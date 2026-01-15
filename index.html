@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>NEHAD ABDELRAMAN PHARMACY</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <meta name="description" content="صيدلية NEHAD ABDELRAMAN - أدوية وعلاجات موثوقة">
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+
+      <!-- LEFT : LOGO (IMAGE ONLY) -->
+      <div class="header-left">
+        <a href="index.html" aria-label="Nehad Pharmacy Home">
+          <img
+            src="image/Nehad.png"
+            alt="Nehad Pharmacy Logo"
+            class="navbar-logo"
+          >
+        </a>
+      </div>
+
+      <!-- CENTER : NAV (DESKTOP ONLY) -->
+      <nav class="nav" id="nav-menu">
+        <a href="index.html" class="active" aria-current="page">الرئيسية</a>
+        <a href="shop.html">تسوق</a>
+        <a href="wishlist.html">المفضلة</a>
+        <a href="offers.html">العروض</a>
+        <a href="contact.html">اتصل بنا</a>
+      </nav>
+
+      <!-- RIGHT : HAMBURGER + CART -->
+      <div class="header-right">
+
+        <button class="hamburger" id="hamburger" aria-label="فتح القائمة" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+
+        <a class="cart" href="cart.html" aria-label="عرض السلة">
+          <img src="image/shopping-cart.svg" width="24" alt="cart icon">
+          <span class="cart-count" aria-live="polite">0</span>
+        </a>
+
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ================= MAIN ================= -->
+  <main id="main">
+
+    <section class="hero" aria-label="الرئيسية">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1>منتجات العناية الطبيعية</h1>
+          <p class="lead">
+            مجموعة شاملة من منتجات العناية بالبشرة والشعر والعناية الشخصية،
+            مصنوعة من مكونات طبيعية آمنة وفعالة.
+          </p>
+
+          <div class="hero-ctas">
+            <a class="btn" href="offers.html">العروض الجديده </a>
+            <a class="btn btn--ghost" id="btn--hero" href="shop.html">تصفح المنتجات </a>
+          </div>
+
+          <ul class="notes">
+            <li><strong>الجودة:</strong> مكونات طبيعية 100%</li>
+            <li><strong>الأمان:</strong> منتجات معتمدة دولياً</li>
+            <li><strong>الثقة:</strong> استشارات متخصصة مجانية</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="featured" class="featured container">
+      <h2>الأقسام</h2>
+      <p class="sub">منتجات الصيدلية والعناية الطبيعية لكل احتياجاتك.</p>
+      <div id="categories-grid" class="categories-grid"></div>
+    </section>
+
+    <!-- Offers moved to dedicated offers.html; removed from homepage -->
+
+    <section class="best-sellers container">
+      <h2>المنتجات الأكثر استخداماً</h2>
+      <p class="sub">أشهر المنتجات لدينا واختيار عملائنا الأول.</p>
+      <div id="bestsellers-grid" class="grid"></div>
+    </section>
+
+    <section id="recently-viewed" class="best-sellers container" style="display:none;">
+      <h2>شاهدت مؤخراً</h2>
+      <p class="sub">المنتجات التي شاهدتها مؤخراً.</p>
+      <div id="recently-viewed-grid" class="grid"></div>
+    </section>
+
+    <section id="about" class="about container">
+      <h2>عن الصيدلية</h2>
+      <p>
+        صيدلية NEHAD ABDELRAMAN متخصصة في توفير منتجات العناية الطبيعية
+        عالية الجودة مع استشارات متخصصة ودعم متميز.
+      </p>
+    </section>
+
+    <section id="newsletter" class="newsletter">
+      <div class="container newsletter-inner">
+        <div class="newsletter-copy">
+          <h2>اشترك في النشرة البريدية</h2>
+          <p>احصل على آخر العروض والتخفيضات والمعلومات الطبية المهمة.</p>
+        </div>
+
+        <form class="newsletter-form" action="#" method="post">
+          <label class="visually-hidden" for="email">البريد الإلكتروني</label>
+          <input id="email" type="email" name="email" placeholder="بريدك الإلكتروني" required>
+          <button class="btn" type="submit">اشترك</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <small>© 2026 صيدلية NEHAD ABDELRAMAN. جميع الحقوق محفوظة.</small>
+      <nav class="footer-nav">
+        <a href="#">الموقع الرسمي</a>
+        <a href="#">تابعنا</a>
+        <a href="#">اتصل بنا</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- ================= JS ================= -->
+  <script src="js/products.js" defer></script>
+  <script src="js/utils.js" defer></script>
+  <script src="js/discount-utils.js" defer></script>
+  <script src="js/cart-manager.js" defer></script>
+  <script src="js/wishlist-manager.js" defer></script>
+  <script src="js/product-manager.js" defer></script>
+  <script src="js/recently-viewed.js" defer></script>
+  <script src="js/cart.js" defer></script>
+  <script src="js/wishlist.js" defer></script>
+  <script src="js/newsletter.js" defer></script>
+  <script src="js/hamburger.js" defer></script>
+  <script src="js/bestsellers.js" defer></script>
+  <script src="js/offers.js" defer></script>
+  <script src="js/categories-home.js" defer></script>
+  <script src="js/recently-viewed-home.js" defer></script>
+  <script src="js/minicart.js" defer></script>
+
+</body>
+</html>

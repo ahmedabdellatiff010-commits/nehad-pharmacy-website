@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>المنتج — صيدلية NEHAD ABDELRAMAN</title>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&family=Segoe+UI:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">اذهب إلى المنتجات</a>
+  <header class="site-header">
+    <div class="container header-inner">
+
+      <!-- LEFT : LOGO (IMAGE ONLY) -->
+      <div class="header-left">
+        <a href="index.html" aria-label="Nehad Pharmacy Home">
+          <img
+            src="image/Nehad pharmacy.png"
+            alt="Nehad Pharmacy Logo"
+            class="navbar-logo"
+          >
+        </a>
+      </div>
+
+      <!-- CENTER : NAV (DESKTOP ONLY) -->
+      <nav class="nav" id="nav-menu">
+        <a href="index.html" class="active" aria-current="page">الرئيسية</a>
+        <a href="shop.html">تسوق</a>
+        <a href="wishlist.html">المفضلة</a>
+        <a href="offers.html">العروض</a>
+        <a href="contact.html">اتصل بنا</a>
+      </nav>
+
+      <!-- RIGHT : HAMBURGER + CART -->
+      <div class="header-right">
+
+        <button class="hamburger" id="hamburger" aria-label="فتح القائمة" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+
+        <a class="cart" href="cart.html" aria-label="عرض السلة">
+          <img src="image/shopping-cart.svg" width="24" alt="cart icon">
+          <span class="cart-count" aria-live="polite">0</span>
+        </a>
+
+      </div>
+
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="product-root" class="product-page container">
+      <!-- المنتج يتم عرضه من قبل js/product.js -->
+    </section>
+
+    <section id="recently-viewed-product" class="best-sellers container" style="display:none;">
+      <h2>منتجات شاهدتها مؤخراً</h2>
+      <p class="sub">تصفح المنتجات الأخرى التي شاهدتها.</p>
+      <div id="recently-viewed-product-grid" class="grid"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <small>© 2026 صيدلية NEHAD ABDELRAMAN. جميع الحقوق محفوظة.</small>
+      <nav class="footer-nav">
+        <a href="#">الموقع الرسمي</a>
+        <a href="#">تابعنا</a>
+        <a href="contact.html">اتصل بنا</a>
+      </nav>
+    </div>
+  </footer>
+
+
+  <script src="js/products.js" defer></script>
+  <script src="js/utils.js" defer></script>
+  <script src="js/discount-utils.js" defer></script>
+  <script src="js/cart-manager.js" defer></script>
+  <script src="js/wishlist-manager.js" defer></script>
+  <script src="js/product-manager.js" defer></script>
+  <script src="js/recently-viewed.js" defer></script>
+  <script src="js/cart.js" defer></script>
+  <script src="js/product.js" defer></script>
+  <script src="js/wishlist.js" defer></script>
+  <script src="js/hamburger.js" defer></script>
+  <script src="js/minicart.js" defer></script>
+</body>
+</html>
