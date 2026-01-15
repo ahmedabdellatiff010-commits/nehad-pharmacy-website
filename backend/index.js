@@ -7,7 +7,6 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const path = require('path');
-app.use(express.static(`__dirname`));
 const fs = require('fs');
 const multer = require('multer');
 
