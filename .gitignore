@@ -1,0 +1,18 @@
+# Node
+node_modules/
+
+# Uploads
+uploads/
+
+# Logs
+*.log
+
+# Docs / Guides
+ADMIN_*
+PROJECT_*
+BRAND_*
+README*
+
+# OS
+.DS_Store
+Thumbs.db
