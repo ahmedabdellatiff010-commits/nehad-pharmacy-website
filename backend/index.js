@@ -13,30 +13,30 @@ const multer = require('multer');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// ================= MIDDLEWARE =================
+/* ===================== MIDDLEWARE ===================== */
 app.use(cors());
 app.use(bodyParser.json({ limit: '50mb' }));
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 
-// ================= DIRECTORIES =================
+/* ===================== PATHS ===================== */
 const ROOT_DIR = path.join(__dirname, '..');
 const DATA_DIR = path.join(__dirname, 'data');
 const UPLOADS_DIR = path.join(ROOT_DIR, 'uploads');
 const IMAGES_DIR = path.join(ROOT_DIR, 'image');
 const ADMIN_DIR = path.join(ROOT_DIR, 'admin');
 
-// Ensure folders exist
+/* ===================== ENSURE DIRS ===================== */
 [DATA_DIR, UPLOADS_DIR].forEach(dir => {
   if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
 });
 
-// ================= STATIC FILES =================
+/* ===================== STATIC FILES ===================== */
 app.use('/uploads', express.static(UPLOADS_DIR));
 app.use('/image', express.static(IMAGES_DIR));
 app.use('/admin', express.static(ADMIN_DIR));
 app.use(express.static(ROOT_DIR));
 
-// ================= MULTER =================
+/* ===================== MULTER ===================== */
 const storage = multer.diskStorage({
   destination: (_, __, cb) => cb(null, UPLOADS_DIR),
   filename: (_, file, cb) => {
@@ -47,8 +47,8 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage });
 
-// ================= HELPERS =================
-function readJSON(file) {
+/* ===================== HELPERS ===================== */
+const readJSON = (file) => {
   try {
     const p = path.join(DATA_DIR, file);
     if (!fs.existsSync(p)) return [];
@@ -56,71 +56,60 @@ function readJSON(file) {
   } catch {
     return [];
   }
-}
+};
 
-function writeJSON(file, data) {
+const writeJSON = (file, data) => {
   try {
     fs.writeFileSync(path.join(DATA_DIR, file), JSON.stringify(data, null, 2));
     return true;
   } catch {
     return false;
   }
-}
+};
 
-// ================= API =================
+/* ===================== API ROUTES ===================== */
 
-// PRODUCTS
-app.get('/api/products', (_, res) => res.json(readJSON('products.json')));
-
-app.post('/api/products', (req, res) => {
-  const products = readJSON('products.json');
-  const item = { id: `product-${Date.now()}`, ...req.body };
-  products.push(item);
-  writeJSON('products.json', products);
-  res.json(item);
+/* Health */
+app.get('/api/health', (_, res) => {
+  res.json({ status: 'ok' });
 });
 
-// CATEGORIES
-app.get('/api/categories', (_, res) => res.json(readJSON('categories.json')));
-
-// ORDERS
-app.get('/api/orders', (_, res) => res.json(readJSON('orders.json')));
-
-// PAGES
-app.get('/api/pages', (_, res) => res.json(readJSON('pages.json')));
-
-// SETTINGS
-app.get('/api/settings', (_, res) =>
-  res.json(readJSON('settings.json')[0] || {})
-);
-
-// STATS
-app.get('/api/statistics', (_, res) => {
-  const products = readJSON('products.json');
-  const orders = readJSON('orders.json');
-  res.json({
-    totalProducts: products.length,
-    totalOrders: orders.length
-  });
-});
-
-// UPLOAD
+/* Upload */
 app.post('/api/upload', upload.single('image'), (req, res) => {
+  if (!req.file) return res.status(400).json({ error: 'No file' });
   res.json({
     filename: req.file.filename,
     url: `/uploads/${req.file.filename}`
   });
 });
 
-// HEALTH
-app.get('/api/health', (_, res) => res.json({ status: 'ok' }));
+/* Products */
+app.get('/api/products', (_, res) => res.json(readJSON('products.json')));
+app.post('/api/products', (req, res) => {
+  const items = readJSON('products.json');
+  const item = { id: `p-${Date.now()}`, ...req.body };
+  items.push(item);
+  writeJSON('products.json', items);
+  res.json(item);
+});
 
-// ================= SPA FALLBACK =================
-app.get('*', (_, res) => {
+/* Categories */
+app.get('/api/categories', (_, res) => res.json(readJSON('categories.json')));
+
+/* Orders */
+app.get('/api/orders', (_, res) => res.json(readJSON('orders.json')));
+
+/* Reviews */
+app.get('/api/reviews', (_, res) => res.json(readJSON('reviews.json')));
+
+/* ===================== SPA FALLBACK ===================== */
+app.get('*', (req, res) => {
   res.sendFile(path.join(ROOT_DIR, 'index.html'));
 });
 
-// ================= START SERVER =================
+/* ===================== START SERVER ===================== */
 app.listen(PORT, '0.0.0.0', () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`🚀 Server running on port ${PORT}`);
 });
+
+module.exports = app;
