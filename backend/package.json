@@ -4,8 +4,7 @@
   "description": "Admin control panel API for online pharmacy",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "node index.js"
+    "start": "node index.js"
   },
   "keywords": [
     "pharmacy",
